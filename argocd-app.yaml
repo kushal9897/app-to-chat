@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: go-chat-app
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  project: default
+  source:
+    repoURL: https://github.com/kushal9897/jenkins-project.git
+    targetRevision: HEAD
+    path: manifests
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
