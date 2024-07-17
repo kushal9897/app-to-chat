@@ -10,4 +10,3 @@ spec:
       targetPort: 8082
   selector:
     app: go-chat-app
-`
