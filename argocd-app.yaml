@@ -8,7 +8,7 @@ spec:
     namespace: default
   project: default
   source:
-    repoURL: https://github.com/kushal9897/jenkins-project.git
+    repoURL: https://github.com/kushal9897/app-to-chat.git
     targetRevision: HEAD
     path: manifests
   syncPolicy:
