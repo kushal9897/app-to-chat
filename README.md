@@ -37,37 +37,37 @@ A real-time chat application built with containerized microservices, automated C
 
 # Makefile for App-to-Chat Deployment
 
-# Variables - update these as per your environment
+Variables - update these as per your environment
 IMAGE_NAME       = app-to-chat
 IMAGE_TAG        = latest
-DOCKER_REGISTRY  = <your-registry>   # e.g., docker.io/username
+DOCKER_REGISTRY  = <your-registr>   # e.g., docker.io/kushal9897
 K8S_MANIFEST_PATH = k8s/
 
 .PHONY: all build tag push deploy compose clean
 
-# 'all' runs all main commands in sequence
+ 'all' runs all main commands in sequence
 all: build tag push deploy
 
-# Build the Docker image
+ Build the Docker image
 build:
 	docker build -t $(IMAGE_NAME):$(IMAGE_TAG) .
 
-# Tag the image for your Docker registry
+ Tag the image for your Docker registry
 tag:
 	docker tag $(IMAGE_NAME):$(IMAGE_TAG) $(DOCKER_REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG)
 
-# Push the image to your Docker registry
+ Push the image to your Docker registry
 push:
 	docker push $(DOCKER_REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG)
 
-# Deploy to Kubernetes using your manifest files
+ Deploy to Kubernetes using your manifest files
 deploy:
 	kubectl apply -f $(K8S_MANIFEST_PATH)
 
-# Optional: Run the app locally with Docker Compose
+ Optional: Run the app locally with Docker Compose
 compose:
 	docker-compose up -d
 
-# Optional: Tear down local Docker Compose services
+Optional: Tear down local Docker Compose services
 clean:
 	docker-compose down
