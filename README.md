@@ -1,31 +1,36 @@
 # App-to-Chat
 
-A real-time chat application built with containerized microservices and an automated CI/CD pipeline for high availability. This project demonstrates how Kubernetes, Docker, and Terraform can be integrated to deliver a scalable, robust, and maintainable chat solution.
+A real-time chat application built with containerized microservices, automated CI/CD pipelines, and Kubernetes orchestration. This document provides all the commands and instructions needed to build, tag, push, deploy, and manage the application in one single file.
+
+---
 
 ## Table of Contents
-- [Features](#features)
-- [Architecture](#architecture)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Local Development](#local-development)
-- [CI/CD Pipeline](#cicd-pipeline)
-- [Monitoring & Logging](#monitoring--logging)
+- [Prerequisites](#prerequisites)
+- [Setup and Installation](#setup-and-installation)
+- [Usage](#usage)
+  - [Docker Build and Push](#docker-build-and-push)
+  - [Kubernetes Deployment](#kubernetes-deployment)
+  - [Local Development with Docker Compose](#local-development-with-docker-compose)
+- [Makefile Commands](#makefile-commands)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
 ---
 
-## Features
-- **Real-Time Messaging:** Instant messaging with low latency.
-- **Containerized Services:** Deploy microservices using Docker for consistency.
-- **Infrastructure as Code:** Manage cloud resources using Terraform.
-- **Automated CI/CD:** Seamless integration and deployment pipelines.
-- **Kubernetes Orchestration:** Automatic scaling and load balancing.
-- **Monitoring & Logging:** Integrated with Prometheus, Grafana, and ELK/Loki for observability.
+## Prerequisites
+
+- **Docker** installed on your system.
+- **Kubernetes** cluster (Minikube for local testing or AWS EKS for production).
+- **Terraform** (optional, if provisioning cloud resources).
+- **Git** for version control.
+- A Docker registry account (e.g., Docker Hub).
 
 ---
 
-## Architecture
+## Setup and Installation
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/kushal9897/app-to-chat.git
+   cd app-to-chat
